@@ -8,7 +8,18 @@ initialize('./archives');
 
 var port = 8080;
 var ip = '127.0.0.1';
+
+
+
 var server = http.createServer(handler.handleRequest);
+
+// var server = http.createServer(function(req, res){
+//   var filepath = url.parse(req.url).pathname;
+//   console.log(filepath);
+//   if(filepath === '/'){
+//     sendFileContent(res, '../public/index.html', 'text/html');
+//   }
+// });
 
 if (module.parent) {
   module.exports = server;
